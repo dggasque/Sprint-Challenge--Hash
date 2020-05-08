@@ -1,9 +1,20 @@
+import os
+
 def finder(files, queries):
 
     """
     YOUR CODE HERE
     """
-
+    dic = {}
+    q = {}
+    result = []
+    for query in queries:
+        q[query] = []
+    for f in files:
+        dic[f] = os.path.basename(f)
+    for key in dic:
+        if dic[key] in q:
+            result.append(key)
     return result
 
 
